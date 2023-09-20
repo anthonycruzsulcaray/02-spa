@@ -1,21 +1,33 @@
 <h1> Héroes <small> Marvel y DC </small> </h1>
 <hr>
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col">
+    <div class="col" *ngFor="let heroe of heroes; let i=index">
         <div class="card h-100">
-            <img src="assets/img/aquaman.png" class="card-img-top" alt="...">
+            <!--  animated fadeIn fast -->
+            <img class="card-img-top animated fadeIn fast" [src]="heroe.img" [alt]="heroe.nombre">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
+                <h5 class="card-title"> {{ heroe.nombre }}</h5>
+                <p class="card-text">{{ heroe.bio }}</p>
             </div>
             <div class="card-footer">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
+                <small class="text-body-secondary"> {{ heroe.aparicion }}</small>
             </div>
-            
-            <button type="button" class="btn btn-outline-primary btn-block">
+
+            <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">
                 <h5>Ver más...</h5>
             </button>
+
+            <!--
+            <a href="#" class="btn btn-outline-primary">
+                <h5>
+                    Ver más link...
+                </h5>
+            </a>
+            -->
+
+            <!--
+            <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary"> Ver más link... </a>-->
+
         </div>
     </div>
 
