@@ -20,9 +20,9 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
       this.keyword = params['keyword'];
-      console.log(params['keyword']);
+      // console.log(params['keyword']);
       this.heroes = this._heroesService.buscarHeroes(params['keyword']);
-      console.log(this.heroes);
+      // console.log(this.heroes);
     });
   }
 

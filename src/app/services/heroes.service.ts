@@ -78,12 +78,10 @@ export class HeroesService {
 
     for (let heroe of this.heroes) {
       let nombre = heroe.nombre.toLowerCase();
-
       if (nombre.indexOf(keyword) >= 0) {
         heroesArray.push(heroe);
       }
     }
-
     return heroesArray;
   }
 }
