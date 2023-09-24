@@ -22,11 +22,12 @@ export class SearchComponent implements OnInit {
       this.keyword = params['keyword'];
       // console.log(params['keyword']);
       this.heroes = this._heroesService.buscarHeroes(params['keyword']);
-      // console.log(this.heroes);
+      console.log(this.heroes);
     });
   }
 
+  /*
   verHeroe(index: number) {
     this.router.navigate(['/heroe', index]);
-  }
+  }*/
 }
